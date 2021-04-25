@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>la propriété position</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+
+            div {
+                width: 100px;
+                min-height: 100px; 
+                background: #1485CC;
+                position:static; /* c'est la veleur par défaut. */
+                border:solid 2px #ff00cc;
+                margin:1rem 0
+            }
+            .absolute {
+                position:absolute; /* en position absolute, l'élément sort du flux. il se positionne par rapport à son plus proche parent positionné (absolute, relative, fixed)'*/
+                top:0;
+                right: 25px;
+                background: #83CC3A;
+            }
+            .relative{
+                position: relative;/* en position relative, l'élément reste dans le flux. Il se positionne par rapport à sa place initiale  dans le flux. Cela crée des trous'*/
+                top:-50px;
+                left: 25px;
+                background: red;
+                
+            }
+            .fixed {
+                position: fixed; /* en position fixed, l'élément sort du flux. il se positionne par rapport l'écran. il reste tout le temps au même endroit même quand on scrolle */
+                bottom:150px;
+                right: 100px;
+                background: #333;
+                color:#fff;
+            }
+            
+            footer {
+                background: #333;
+                color:#fff;
+                padding: .5rem;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>la propriété position</h1>
+        <div> 1 static </div>
+        <div>  2 static</div>
+        <div class="absolute"> 3 absolute</div>
+        <div class="relative">  4 relatif</div>
+        <div class="relative"> 
+             5 relative
+             <div class="absolute"> 5-a absolute</div>
+        </div>
+        <div class="fixed">  6 fixe</div>
+        <div>  7 static</div>
+
+        <footer> pied de page</footer>
+    </body>
+</html>
